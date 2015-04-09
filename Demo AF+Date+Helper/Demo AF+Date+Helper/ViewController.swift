@@ -233,8 +233,6 @@ class ViewController: UITableViewController, UITableViewDataSource, UITableViewD
         
         items.append(sectionItems)
         
-
-        
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -244,9 +242,6 @@ class ViewController: UITableViewController, UITableViewDataSource, UITableViewD
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return sections[section]
     }
-    
-
-    
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items[section].count
