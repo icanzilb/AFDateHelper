@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name     = 'AFDateHelper(icanzilb)'
   s.version  = '1.1'
-  s.platform = :ios
+  s.platform = :ios, '8.0'
   s.license  = 'MIT'
   s.summary  = 'Convenience extension for NSDate in Swift.'
   s.homepage = 'https://github.com/icanzilb/AFDateHelper'
