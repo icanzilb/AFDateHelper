@@ -1,4 +1,4 @@
-AF+Date+Helper 1.08
+AF+Date+Helper 1.1
 =============================
 
 Convenience extension for NSDate in Swift
@@ -62,26 +62,26 @@ date.daysBeforeDate(now) -> Int
 
 ### Decomposing Dates
 ```Swift
-date.nearestHour() -> Int
-date.year() -> Int
-date.month() -> Int
-date.week() -> Int
-date.day() -> Int
-date.hour() -> Int
-date.minute() -> Int
-date.seconds() -> Int
-date.weekday() -> Int
-date.nthWeekday() -> Int
-date.monthDays() -> Int
-date.firstDayOfWeek() -> Int
-date.lastDayOfWeek() -> Int
-date.isWeekday() -> Int
-date.isWeekend() -> Int
+date.nearestHour: Int
+date.year: Int
+date.month: Int
+date.week: Int
+date.day: Int
+date.hour: Int
+date.minute: Int
+date.seconds: Int
+date.weekday: Int
+date.nthWeekday: Int
+date.monthDays: Int
+date.firstDayOfWeek: Int
+date.lastDayOfWeek: Int
+date.isWeekday: Int
+date.isWeekend: Int
 ```
 
 ### To String
 ```Swift
-date.toString() -> String
+date.stringValue -> String
 date.toString(format: .Custom("dd MMM yyyy HH:mm:ss")) -> String
 date.toString(format: .ISO8601) -> String
 date.toString(format: .DotNet) -> String
@@ -92,16 +92,16 @@ date.toString(dateStyle: .ShortStyle, timeStyle: .NoStyle, doesRelativeDateForma
 date.toString(dateStyle: .MediumStyle, timeStyle: .ShortStyle, doesRelativeDateFormatting: false) -> String
 date.toString(dateStyle: .LongStyle, timeStyle: .LongStyle, doesRelativeDateFormatting: false) -> String
 date.toString(dateStyle: .FullStyle, timeStyle: .FullStyle, doesRelativeDateFormatting: false) -> String
-date.relativeTimeToString()
+date.relativeTimeString
 ```
 
 ### Components To String
 ```Swift
-date.weekdayToString() -> String
-date.shortWeekdayToString() -> String
-date.veryShortWeekdayToString() -> String
-date.monthToString() -> String
-date.shortMonthToString() -> String
-date.veryShortMonthToString() -> String
+date.weekdayString: String
+date.shortWeekdayString: String
+date.veryShortWeekdayString: String
+date.monthString: String
+date.shortMonthString: String
+date.veryShortMonthString: String
 ```
 
