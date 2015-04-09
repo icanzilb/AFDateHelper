@@ -31,24 +31,24 @@ class ViewController: UITableViewController, UITableViewDataSource, UITableViewD
         
         // Date from string with custom format
         date = NSDate(fromString: "16 July 1972 6:12:00 ", format: .Custom("dd MMM yyyy HH:mm:ss"))
-        sectionItems.append(TableItem(title: "Custom Format", description: "dd MMM yyyy HH:mm:ss = \(date.toString())"))
+        sectionItems.append(TableItem(title: "Custom Format", description: "dd MMM yyyy HH:mm:ss = \(date.stringValue)"))
         
         // Date from ISO8601 String
         date = NSDate(fromString: "1972-07-16T08:15:30-05:00", format: .ISO8601)
-        sectionItems.append(TableItem(title: "ISO8601", description: "1972-07-16T08:15:30-05:00 = \(date.toString())"))
+        sectionItems.append(TableItem(title: "ISO8601", description: "1972-07-16T08:15:30-05:00 = \(date.stringValue)"))
         
         // Date from DotNetJSON String
         date = NSDate(fromString: "/Date(1260123281843)/", format: .DotNet)
-        sectionItems.append(TableItem(title: "DotNetJSON", description: "Date(1260123281843) = \(date.toString())"))
+        sectionItems.append(TableItem(title: "DotNetJSON", description: "Date(1260123281843) = \(date.stringValue)"))
         
         // Date from RSS String
         date = NSDate(fromString: "Fri, 09 Sep 2011 15:26:08 +0200", format: .RSS)
         println("RSS: \(date)")
-        sectionItems.append(TableItem(title: "RSS", description:"Fri, 09 Sep 2011 15:26:08 +0200 = \(date.toString())"))
+        sectionItems.append(TableItem(title: "RSS", description:"Fri, 09 Sep 2011 15:26:08 +0200 = \(date.stringValue)"))
         
         // Date from AltRSS String
         date = NSDate(fromString: "09 Sep 2011 15:26:08 +0200", format: .AltRSS)
-        sectionItems.append(TableItem(title: "Alt RSS", description: "09 Sep 2011 15:26:08 +0200 = \(date.toString())"))
+        sectionItems.append(TableItem(title: "Alt RSS", description: "09 Sep 2011 15:26:08 +0200 = \(date.stringValue)"))
         
         items.append(sectionItems)
         
@@ -57,46 +57,46 @@ class ViewController: UITableViewController, UITableViewDataSource, UITableViewD
         sectionItems = [TableItem]()
         
         var equality = now.isEqualToDate(date) ? "is equal to" : "is not equal to"
-        sectionItems.append(TableItem(title: "Is Equal", description: "\(now.toString()) \(equality) \(date.toString())"))
+        sectionItems.append(TableItem(title: "Is Equal", description: "\(now.stringValue) \(equality) \(date.stringValue)"))
         
         equality = now.isToday() ? "is today" : "is not today"
-        sectionItems.append(TableItem(title: "Today", description: "\(now.toString()) \(equality)"))
+        sectionItems.append(TableItem(title: "Today", description: "\(now.stringValue) \(equality)"))
         
         date = now.dateByAddingDays(1)
         equality = date.isTomorrow() ? "is tomorrow" : "is not tomorrow"
-        sectionItems.append(TableItem(title: "Tomorrow", description: "\(date.toString()) \(equality)"))
+        sectionItems.append(TableItem(title: "Tomorrow", description: "\(date.stringValue) \(equality)"))
         
         date = now.dateBySubtractingDays(1)
         equality = date.isYesterday() ? "is yesterday" : "is not yesterday"
-        sectionItems.append(TableItem(title: "Yesterday", description: "\(date.toString()) \(equality)"))
+        sectionItems.append(TableItem(title: "Yesterday", description: "\(date.stringValue) \(equality)"))
         
         equality = now.isSameWeekAsDate(date) ? "is same week as" : "is not same week as"
-        sectionItems.append(TableItem(title: "Same Week", description: "\(date.toString()) \(equality) \(date.toString())"))
+        sectionItems.append(TableItem(title: "Same Week", description: "\(date.stringValue) \(equality) \(date.stringValue)"))
         
         equality = date.isThisWeek() ? "is this week" : "is not this week"
-        sectionItems.append(TableItem(title: "This Week", description: "\(date.toString()) \(equality)"))
+        sectionItems.append(TableItem(title: "This Week", description: "\(date.stringValue) \(equality)"))
         
         date = now.dateByAddingDays(7)
         equality = date.isNextWeek() ? "is next week" : "is not next week"
-        sectionItems.append(TableItem(title: "Next Week", description: "\(date.toString()) \(equality)"))
+        sectionItems.append(TableItem(title: "Next Week", description: "\(date.stringValue) \(equality)"))
         
         date = now.dateBySubtractingDays(7)
         equality = date.isLastWeek() ? "is last week" : "is not last week"
-        sectionItems.append(TableItem(title: "Last Week", description: "\(date.toString()) \(equality)"))
+        sectionItems.append(TableItem(title: "Last Week", description: "\(date.stringValue) \(equality)"))
         
         equality = now.isSameYearAsDate(date) ? "is same year as" : "is not same year as"
-        sectionItems.append(TableItem(title: "Same Year", description: "\(now.toString()) \(equality) \(date.toString())"))
+        sectionItems.append(TableItem(title: "Same Year", description: "\(now.stringValue) \(equality) \(date.stringValue)"))
         
         equality = date.isThisYear() ? "is this year" : "is not this year"
-        sectionItems.append(TableItem(title: "This Year", description: "\(date.toString()) \(equality)"))
+        sectionItems.append(TableItem(title: "This Year", description: "\(date.stringValue) \(equality)"))
         
         date = now.dateByAddingDays(365)
         equality = date.isNextYear() ? "is next year" : "is not next year"
-        sectionItems.append(TableItem(title: "Next Year", description: "\(date.toString()) \(equality)"))
+        sectionItems.append(TableItem(title: "Next Year", description: "\(date.stringValue) \(equality)"))
         
         date = now.dateBySubtractingDays(365)
         equality = date.isLastYear() ? "is last year" : "is not last year"
-        sectionItems.append(TableItem(title: "Last Year", description: "\(date.toString()) \(equality)"))
+        sectionItems.append(TableItem(title: "Last Year", description: "\(date.stringValue) \(equality)"))
         
         items.append(sectionItems)
         
@@ -105,34 +105,34 @@ class ViewController: UITableViewController, UITableViewDataSource, UITableViewD
         sectionItems = [TableItem]()
         
         date = now.dateByAddingDays(2)
-        sectionItems.append(TableItem(title: "Adding Days", description: "+ 2 Days: \(date.toString())"))
+        sectionItems.append(TableItem(title: "Adding Days", description: "+ 2 Days: \(date.stringValue)"))
         
         date = now.dateBySubtractingDays(4)
-        sectionItems.append(TableItem(title: "Substracting Days", description: "- 4 Days: \(date.toString())"))
+        sectionItems.append(TableItem(title: "Substracting Days", description: "- 4 Days: \(date.stringValue)"))
         
         date = now.dateByAddingHours(2)
-        sectionItems.append(TableItem(title: "Adding Hours", description: "+ 2 Hours: \(date.toString())"))
+        sectionItems.append(TableItem(title: "Adding Hours", description: "+ 2 Hours: \(date.stringValue)"))
         
         date = now.dateBySubtractingHours(4)
-        sectionItems.append(TableItem(title: "Substracting Hours", description: "- 4 Hours: \(date.toString())"))
+        sectionItems.append(TableItem(title: "Substracting Hours", description: "- 4 Hours: \(date.stringValue)"))
         
         date = now.dateByAddingMinutes(2)
-        sectionItems.append(TableItem(title: "Adding Minutes", description: "+ 2 Minutes: \(date.toString())"))
+        sectionItems.append(TableItem(title: "Adding Minutes", description: "+ 2 Minutes: \(date.stringValue)"))
         
         date = now.dateBySubtractingMinutes(4)
-        sectionItems.append(TableItem(title: "Substracting Minutes", description: "- 4 Minutes: \(date.toString())"))
+        sectionItems.append(TableItem(title: "Substracting Minutes", description: "- 4 Minutes: \(date.stringValue)"))
         
         date = now.dateAtStartOfDay()
-        sectionItems.append(TableItem(title: "Start of Day", description: "\(date.toString())"))
+        sectionItems.append(TableItem(title: "Start of Day", description: "\(date.stringValue)"))
         
         date = now.dateAtEndOfDay()
-        sectionItems.append(TableItem(title: "End of Day", description: "\(date.toString())"))
+        sectionItems.append(TableItem(title: "End of Day", description: "\(date.stringValue)"))
         
         date = now.dateAtStartOfWeek()
-        sectionItems.append(TableItem(title: "Start of Week", description: "\(date.toString())"))
+        sectionItems.append(TableItem(title: "Start of Week", description: "\(date.stringValue)"))
         
         date = now.dateAtEndOfWeek()
-        sectionItems.append(TableItem(title: "End of Week", description: "\(date.toString())"))
+        sectionItems.append(TableItem(title: "End of Week", description: "\(date.stringValue)"))
         
         items.append(sectionItems)
         
@@ -142,22 +142,22 @@ class ViewController: UITableViewController, UITableViewDataSource, UITableViewD
         sectionItems = [TableItem]()
         
         var num = date.minutesAfterDate(now)
-        sectionItems.append(TableItem(title: "Minutes After", description: "Interval from \(date.toString()): \(num)"))
+        sectionItems.append(TableItem(title: "Minutes After", description: "Interval from \(date.stringValue): \(num)"))
         
         num = date.minutesBeforeDate(now)
-        sectionItems.append(TableItem(title: "Minutes Before", description: "Interval from \(date.toString()): \(num)"))
+        sectionItems.append(TableItem(title: "Minutes Before", description: "Interval from \(date.stringValue): \(num)"))
         
         num = date.hoursAfterDate(now)
-        sectionItems.append(TableItem(title: "Hours After", description: "Interval from \(date.toString()): \(num)"))
+        sectionItems.append(TableItem(title: "Hours After", description: "Interval from \(date.stringValue): \(num)"))
         
         num = date.hoursBeforeDate(now)
-        sectionItems.append(TableItem(title: "Hours Before", description: "Interval from \(date.toString()): \(num)"))
+        sectionItems.append(TableItem(title: "Hours Before", description: "Interval from \(date.stringValue): \(num)"))
         
         num = date.daysAfterDate(now)
-        sectionItems.append(TableItem(title: "Days After", description: "Interval from \(date.toString()): \(num)"))
+        sectionItems.append(TableItem(title: "Days After", description: "Interval from \(date.stringValue): \(num)"))
         
         num = date.daysBeforeDate(now)
-        sectionItems.append(TableItem(title: "Days Before", description: "Interval from \(date.toString()): \(num)"))
+        sectionItems.append(TableItem(title: "Days Before", description: "Interval from \(date.stringValue): \(num)"))
         
         items.append(sectionItems)
         
@@ -166,29 +166,29 @@ class ViewController: UITableViewController, UITableViewDataSource, UITableViewD
         sections.append("Decomposing Dates")
         sectionItems = [TableItem]()
         
-        sectionItems.append(TableItem(title: "Nearest Hour", description: "\(now.nearestHour())"))
-        sectionItems.append(TableItem(title: "Year", description: "\(now.year())"))
-        sectionItems.append(TableItem(title: "Month", description: "\(now.month())"))
-        sectionItems.append(TableItem(title: "Week", description: "\(now.week())"))
-        sectionItems.append(TableItem(title: "Day", description: "\(now.day())"))
-        sectionItems.append(TableItem(title: "Hour", description: "\(now.hour())"))
-        sectionItems.append(TableItem(title: "Minute", description: "\(now.minute())"))
+        sectionItems.append(TableItem(title: "Nearest Hour", description: "\(now.nearestHour)"))
+        sectionItems.append(TableItem(title: "Year", description: "\(now.year)"))
+        sectionItems.append(TableItem(title: "Month", description: "\(now.month)"))
+        sectionItems.append(TableItem(title: "Week", description: "\(now.week)"))
+        sectionItems.append(TableItem(title: "Day", description: "\(now.day)"))
+        sectionItems.append(TableItem(title: "Hour", description: "\(now.hour)"))
+        sectionItems.append(TableItem(title: "Minute", description: "\(now.minute)"))
 
-        sectionItems.append(TableItem(title: "Seconds", description: "\(now.seconds())"))
-        sectionItems.append(TableItem(title: "Weekday", description: "\(now.weekday())"))
-        sectionItems.append(TableItem(title: "Nth Weekday", description: "\(now.nthWeekday())"))
-        sectionItems.append(TableItem(title: "Month Days", description: "\(now.monthDays())"))
-        sectionItems.append(TableItem(title: "First Day Of Week", description: "\(now.firstDayOfWeek())"))
-        sectionItems.append(TableItem(title: "Last Day Of Week", description: "\(now.lastDayOfWeek())"))
-        sectionItems.append(TableItem(title: "Is Weekday", description: "\(now.isWeekday())"))
-        sectionItems.append(TableItem(title: "Is Weekend", description: "\(now.isWeekend())"))
+        sectionItems.append(TableItem(title: "Seconds", description: "\(now.seconds)"))
+        sectionItems.append(TableItem(title: "Weekday", description: "\(now.weekday)"))
+        sectionItems.append(TableItem(title: "Nth Weekday", description: "\(now.nthWeekday)"))
+        sectionItems.append(TableItem(title: "Month Days", description: "\(now.monthDays)"))
+        sectionItems.append(TableItem(title: "First Day Of Week", description: "\(now.firstDayOfWeek)"))
+        sectionItems.append(TableItem(title: "Last Day Of Week", description: "\(now.lastDayOfWeek)"))
+        sectionItems.append(TableItem(title: "Is Weekday", description: "\(now.isWeekday)"))
+        sectionItems.append(TableItem(title: "Is Weekend", description: "\(now.isWeekend)"))
         items.append(sectionItems)
 
         /* DATE TO STRING */
         sections.append("Date To String")
         sectionItems = [TableItem]()
         
-        sectionItems.append(TableItem(title: "toString()", description: now.toString()))
+        sectionItems.append(TableItem(title: "stringValue", description: now.stringValue))
         
         sectionItems.append(TableItem(title: "Custom: dd MMM yyyy HH:mm:ss", description: now.toString(format: .Custom("dd MMM yyyy HH:mm:ss"))))
         
@@ -210,7 +210,7 @@ class ViewController: UITableViewController, UITableViewDataSource, UITableViewD
         
         sectionItems.append(TableItem(title: "Full Date, Full Time, Not Relative", description: now.toString(dateStyle: .FullStyle, timeStyle: .FullStyle, doesRelativeDateFormatting: false)))
         
-        sectionItems.append(TableItem(title: "Relative Time", description: now.relativeTimeToString()))
+        sectionItems.append(TableItem(title: "Relative Time", description: now.relativeTimeString))
         
         items.append(sectionItems)
         
@@ -219,18 +219,17 @@ class ViewController: UITableViewController, UITableViewDataSource, UITableViewD
         sections.append("Date Components")
         sectionItems = [TableItem]()
         
-        sectionItems.append(TableItem(title: "Weekday", description: now.weekdayToString()))
+        sectionItems.append(TableItem(title: "Weekday", description: now.weekdayString))
         
-        sectionItems.append(TableItem(title: "Short Weekday", description: now.shortWeekdayToString()))
+        sectionItems.append(TableItem(title: "Short Weekday", description: now.shortWeekdayString))
         
-        sectionItems.append(TableItem(title: "Very Short Weekday", description: now.veryShortWeekdayToString()))
+        sectionItems.append(TableItem(title: "Very Short Weekday", description: now.veryShortWeekdayString))
         
-        sectionItems.append(TableItem(title: "Month", description: now.monthToString()))
+        sectionItems.append(TableItem(title: "Month", description: now.monthString))
         
-        sectionItems.append(TableItem(title: "Short Month", description: now.shortMonthToString()))
+        sectionItems.append(TableItem(title: "Short Month", description: now.shortMonthString))
         
-        sectionItems.append(TableItem(title: "Very Short Month", description: now.veryShortMonthToString()))
-        
+        sectionItems.append(TableItem(title: "Very Short Month", description: now.veryShortMonthString))
         
         items.append(sectionItems)
         
@@ -253,7 +252,7 @@ class ViewController: UITableViewController, UITableViewDataSource, UITableViewD
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
         let item = items[indexPath.section][indexPath.row]
         cell.textLabel?.text = item.title
         cell.detailTextLabel?.text = item.description
